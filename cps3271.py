@@ -1,2 +1,2 @@
 def cps3271(y):
-    return 4y
+    return 4*y
