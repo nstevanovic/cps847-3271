@@ -16,3 +16,13 @@ script:
   
 after_success:
  - codecov --token=$COV_TOKEN # upload coverage report to codecov.io
+ 
+deploy:
+  provider: s3
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key:  $AWS_SECRET_ACCESS_KEY
+  bucket: cps847-3271
+  local-dir: s3_deploy/dat.html
+  region: $AWS_DEFAULT_REGION
+  skip_cleanup: true
+  acl: public_read
